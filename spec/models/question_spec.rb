@@ -6,7 +6,6 @@ describe Question do
   end
 
   context 'testing attr_accessible' do
-    it { should allow_mass_assignment_of(:user_id) }
     it { should allow_mass_assignment_of(:title) }
     it { should allow_mass_assignment_of(:body) }
   end

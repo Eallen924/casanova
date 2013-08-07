@@ -1,4 +1,4 @@
 class Question < ActiveRecord::Base
-  attr_accessible :title, :body, :user_id
+  attr_accessible :title, :body
   belongs_to :user
 end
