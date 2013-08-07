@@ -18,12 +18,14 @@ group :development, :test do
   gem 'faker'
   gem 'pry'
   gem 'better_errors'
+  gem 'guard-rspec'
+  gem 'spork', "> 0.9.0.rc"
+  gem 'guard-spork'
 end
 
-group :test do 
+group :test do
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
-  gem 'guard-rspec'
   gem 'selenium-webdriver'
   gem 'database_cleaner'
 end

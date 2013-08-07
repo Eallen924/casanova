@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe Question do
+
+  it { should be_instance_of(Question) }
+
   context 'testing associations' do
     it { should belong_to(:user) }
   end
