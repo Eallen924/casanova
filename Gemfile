@@ -14,13 +14,16 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'capybara'
-  gem 'faker'
-  gem 'pry'
+end
+
+group :development do 
   gem 'better_errors'
+  gem 'pry'
 end
 
 group :test do 
+  gem 'capybara'
+  gem 'faker'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
   gem 'guard-rspec'
