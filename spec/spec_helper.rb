@@ -20,7 +20,6 @@ RSpec.configure do |config|
 
   config.before(:each) do
     DatabaseCleaner.start
-    FakeWeb.clean_registry
   end
 
   config.after(:each) do
