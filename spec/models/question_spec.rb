@@ -3,8 +3,6 @@ require 'spec_helper'
 describe Question do
   context 'testing associations' do
     it { should belong_to(:user) }
-    #it { should have_many(:answers) }
-    #it { should have_many(:comments) }
   end
 
   context 'testing attr_accessible' do
