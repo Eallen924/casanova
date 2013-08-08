@@ -14,6 +14,9 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    @errors = flash[:errors]
     @question = Question.find(params[:id])
+    @answer = Answer.new
+    @answers = @question.answers
   end
 end
