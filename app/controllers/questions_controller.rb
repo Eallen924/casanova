@@ -1,4 +1,10 @@
 class QuestionsController < ApplicationController
+
+  def index
+    @user = User.new
+    @questions = Question.all
+  end
+
   def create
     @question = Question.new(params[:question])
     if @question.save
@@ -10,10 +16,12 @@ class QuestionsController < ApplicationController
   end
 
   def new
+    @user = User.new
     @question = Question.new
   end
 
   def show
+    @user = User.new
     @question = Question.find(params[:id])
   end
 end

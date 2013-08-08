@@ -9,6 +9,17 @@ Casanova::Application.routes.draw do
 
   resources :questions
 
+  root to: "home#index"
+  # resources :questions
+
+  get    '/questions'            ,to: 'questions#index'
+  get    '/questions/new'        ,to: 'questions#new'
+  post   '/questions'            ,to: 'questions#create'
+  get    '/questions/:id'        ,to: 'questions#show'
+  get    '/questions/:id/edit'   ,to: 'questions#edit'
+  put    '/questions/:id'        ,to: 'questions#update'
+  delete '/questions/:id'        ,to: 'questions#destroy'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
