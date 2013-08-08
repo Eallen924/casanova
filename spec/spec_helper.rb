@@ -18,7 +18,9 @@ require 'database_cleaner'
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 RSpec.configure do |config|
+
   config.include Capybara::DSL
+  config.include AuthenticationHelper, type: :feature
   
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
@@ -40,11 +42,6 @@ RSpec.configure do |config|
   config.order = "random"
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
-
-  # If you're not using ActiveRecord, or you'd prefer not to run each of your
-  # examples within a transaction, remove the following line or assign false
-  # instead of true.
-  config.use_transactional_fixtures = true
 
   # If true, the base class of anonymous controllers will be inferred
   # automatically. This will be the default behavior in future versions of

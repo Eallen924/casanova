@@ -12,6 +12,5 @@ describe User do
   context "describes associations" do 
     it { should have_many(:questions) }
   end
-
 end
 
