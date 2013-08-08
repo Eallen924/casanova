@@ -5,7 +5,7 @@ Casanova::Application.routes.draw do
   post '/login', to: 'users#login'
   get '/logout', to: 'users#logout'
 
-  root to: "home#index"
+  root to: "users#new"
   resources :questions
 
   # The priority is based upon order of creation:
