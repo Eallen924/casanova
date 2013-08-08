@@ -6,7 +6,21 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
+<header>
+<% if current_user %>
+  <%= link_to "Logout", logout_path %>
+<% else %>
+  <%= link_to "Sign up", signup_path %>
+  <%= form_for @user, :url => login_path do |f| %>
+    <%= f.text_field :username, :placeholder => "Username"%>
+    <%= f.text_field :password, :placeholder => "Password"%>
+    <%= f.submit value="Login"%>
+  <% end %>
+<% end %>
+
+</header>
 <body>
+
 
 <%= yield %>
 

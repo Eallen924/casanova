@@ -1,6 +1,14 @@
 Casanova::Application.routes.draw do
 
   resources :users
+<<<<<<< Updated upstream
+=======
+  get '/signup', to: 'users#new'
+  post '/login', to: 'users#login'
+  get '/logout', to: 'users#logout'
+
+  root to: "home#index"
+>>>>>>> Stashed changes
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
