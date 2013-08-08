@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'User', :js => true do
+describe 'User can sign up' do
   context "on landing page" do 
     it "can click sign up" do
       visit new_user_path
