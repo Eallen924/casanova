@@ -1,0 +1,7 @@
+<h2>Have a question?</h2>
+
+<%= form_for(@question) do |f| %>
+  Title: <%= f.text_field :title %>
+  Body: <%= f.text_field :body %>
+  <%= f.submit "Ask Away!" %>
+<% end %>
