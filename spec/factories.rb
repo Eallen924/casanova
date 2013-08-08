@@ -5,4 +5,10 @@ FactoryGirl.define do
     password "abc123"
     password_confirmation "abc123"
   end
+
+  factory :question do
+    user
+    title "How does the internet work?"
+    body "I really wanna know!"
+  end
 end
