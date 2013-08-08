@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   attr_accessible :username, :email, :password, :password_confirmation
+
   has_many :questions
+  has_many :answers
   has_many :comments, as: :commentable
 
   validates :username, :presence => true
