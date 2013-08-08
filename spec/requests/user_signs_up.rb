@@ -15,9 +15,20 @@ describe 'User' do
       page.should have_content "pri1229"   
     end
 
-    it "can login by filling out login form and clicking login"
-  end
-
+    it "can login by filling out login form and clicking login" do
+      User.create(username:               'eallen', 
+                  email:                  'eric@eric.com',
+                  password:               'password',
+                  password_confirmation:  'password')
+      visit root_url
+      expect {
+        fill_in 'user_username', with: 'eallen'
+        fill_in 'user_password', with: 'password'
+        click_button "Login"
+      }.to have_content "eallen"
+      
+      page.should have_content "logout"
+    end
   context "after logging in" do
     it "can click logout and get logged out"
   end
