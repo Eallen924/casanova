@@ -8,7 +8,7 @@ describe Comment do
   end
 
   context 'validations' do
-    it { should validate_presence_of(:user_id) }
+    it { should validate_presence_of(:user) }
     it { should validate_presence_of(:text) }
     it { should validate_presence_of(:commentable_type) }
     it { should validate_presence_of(:commentable_id) }
