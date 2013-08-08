@@ -1,2 +1,37 @@
-This is the question show page<br>
-Title: <%= @question.title %>
+<div id="question-<%= @question.id %>">
+  <h3><%= @question.title %></h3>
+  <p><%= @question.body %><br></p>
+  <tbody>
+    <tr>
+      <td><%= @question.user.username %></td>
+      <td><%= @question.user.updated_at.strftime("%m-%d-%Y") %></td>
+      <td><%= @question.user.created_at.strftime("%m-%d-%Y") %></td>
+    </tr>
+  </tbody>
+
+  <% if @answers %>
+    <div id="answers">
+      <% @answers.each do |answer| %>
+        <div id="answer-<%= answer.id %>">
+          <%= answer.body %><br>
+          <tbody>
+            <tr>
+              <td><%= answer.user.username %></td>
+              <td><%= answer.user.updated_at.strftime("%m-%d-%Y") %></td>
+              <td><%= answer.user.created_at.strftime("%m-%d-%Y") %></td>
+            </tr>
+          </tbody>
+        </div>
+      <%end%>
+
+    </div>
+  <%end%>
+
+  <p>answer question<p>
+  <% if current_user %>
+    <%= form_for @answer, :url => question_answers_path(@question) do |f| %>
+      <%= f.text_area :body, placeholder: "Your Answer"%>
+      <%= f.submit value="Submit"%>
+    <% end %>
+  <% end %>
+</div>

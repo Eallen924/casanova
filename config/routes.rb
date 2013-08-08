@@ -7,7 +7,9 @@ Casanova::Application.routes.draw do
   post '/login', to: 'users#login'
   get '/logout', to: 'users#logout'
 
-  resources :questions
+  resources :questions do
+    resources :answers
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
