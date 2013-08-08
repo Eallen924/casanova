@@ -8,7 +8,14 @@
       <td><%= @question.user.created_at.strftime("%m-%d-%Y") %></td>
     </tr>
   </tbody>
-
+  <p>add comment<p>
+  <% if current_user %>
+    <%= form_for @comment, :url => question_comments_path(@question) do |f| %>
+      <%= f.text_area :text, placeholder: "Your Comment"%>
+      <%= f.submit value="Submit"%>
+    <% end %>
+  <% end %>
+  <%= @question.comments.inspect %>
   <% if @answers %>
     <div id="answers">
       <% @answers.each do |answer| %>
