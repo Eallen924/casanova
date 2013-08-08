@@ -14,16 +14,19 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'capybara'
-  gem 'faker'
-  gem 'pry'
+end
+
+group :development do 
   gem 'better_errors'
-  gem 'guard-rspec'
-  gem 'spork', "> 0.9.0.rc"
-  gem 'guard-spork'
 end
 
 group :test do
+  gem 'spork', "> 0.9.0.rc"
+  gem 'pry'
+  gem 'capybara'
+  gem 'faker'
+  gem 'guard-rspec'
+  gem 'guard-spork'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
   gem 'selenium-webdriver'
