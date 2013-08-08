@@ -24,9 +24,11 @@ end
 group :test do 
   gem 'capybara'
   gem 'faker'
+  gem 'guard-rspec'
+  gem 'spork', "> 0.9.0.rc"
+  gem 'guard-spork'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
-  gem 'guard-rspec'
   gem 'selenium-webdriver'
   gem 'database_cleaner'
 end
