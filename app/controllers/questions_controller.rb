@@ -20,5 +20,33 @@ class QuestionsController < ApplicationController
     @answer = Answer.new
     @answers = @question.answers
     @comment = Comment.new
+    @vote = Vote.new
   end
+
+  def upvote
+    question = Question.find(params[:id])
+    vote = current_user.votes.build(up: true)
+    vote.votable = question
+
+    if vote.save
+      redirect_to question
+    else
+      flash[:errors] =  vote.errors.full_messages
+      redirect_to question
+    end
+  end
+
+  def downvote
+    question = Question.find(params[:id])
+    vote = current_user.votes.build(up: false)
+    vote.votable = question
+
+    if vote.save
+      redirect_to question
+    else
+      flash[:errors] =  vote.errors.full_messages
+      redirect_to question
+    end
+  end
+
 end

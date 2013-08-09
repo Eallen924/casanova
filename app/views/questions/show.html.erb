@@ -9,6 +9,20 @@
     </tr>
   </tbody>
 
+  <% if (@question.votes.where(up: true).count - @question.votes.where(up: false).count) > 0 %>
+    <p>This question has <%= @question.votes.where(up: true).count - @question.votes.where(up: false).count %> votes </p>
+  <% else %>
+    <p>This question has 0 votes </p>
+  <% end %>
+
+    <%= form_for @vote, :url => upvote_path(@question) do |f| %>
+    <%= f.submit value="Vote Up"%>
+  <% end %>
+
+    <%= form_for @vote, :url => downvote_path(@question) do |f| %>
+    <%= f.submit value="Vote Down"%>
+  <% end %>
+
   <p>add comment<p>
     <%= form_for @comment, :url => question_comments_path(@question) do |f| %>
       <%= f.text_area :text, placeholder: "Your Comment"%>

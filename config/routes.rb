@@ -13,6 +13,9 @@ Casanova::Application.routes.draw do
     resources :votes
   end
 
+  post '/questions/:id/upvote', to: 'questions#upvote', as: 'upvote'
+  post '/questions/:id/downvote', to: 'questions#downvote', as: 'downvote'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
