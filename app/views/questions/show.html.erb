@@ -17,7 +17,7 @@
 
   <% @question.comments.each do |comment| %>
     <ul>
-    <li><%= comment.text %></li>
+    <li><%= comment.user.username %> <%= comment.text %></li>
     </ul>
   <% end %>
 

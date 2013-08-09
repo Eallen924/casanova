@@ -18,5 +18,6 @@ feature 'User can post comments on questions' do
     end
 
     expect(page).to have_content "nice question!"
+    expect(page).to have_content user.username
   end
 end
