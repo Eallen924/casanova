@@ -9,6 +9,13 @@
     </tr>
   </tbody>
 
+
+  <% @question.comments.each do |comment| %>
+    <ul>
+    <li><%= comment.text %></li>
+    </ul>
+  <% end %>
+
   <% if @answers %>
     <div id="answers">
       <% @answers.each do |answer| %>
