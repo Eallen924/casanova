@@ -17,6 +17,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def login
     user = User.find_by_username(params[:user][:username])
     if user && user.authenticate(params[:user][:password])
