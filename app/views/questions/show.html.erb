@@ -28,10 +28,8 @@
   <%end%>
 
   <p>answer question<p>
-  <% if current_user %>
     <%= form_for @answer, :url => question_answers_path(@question) do |f| %>
       <%= f.text_area :body, placeholder: "Your Answer"%>
       <%= f.submit value="Submit"%>
     <% end %>
-  <% end %>
 </div>
