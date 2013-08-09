@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 
   has_many :questions
   has_many :answers
-  has_many :comments, as: :commentable
+  has_many :comments
 
   validates :username, :presence => true
   validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, message: "%{value} is not a valid email address." }

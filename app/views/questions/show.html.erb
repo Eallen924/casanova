@@ -9,6 +9,18 @@
     </tr>
   </tbody>
 
+  <p>add comment<p>
+    <%= form_for @comment, :url => question_comments_path(@question) do |f| %>
+      <%= f.text_area :text, placeholder: "Your Comment"%>
+      <%= f.submit value="Submit"%>
+    <% end %>
+
+  <% @question.comments.each do |comment| %>
+    <ul>
+    <li><%= comment.user.username %> <%= comment.text %></li>
+    </ul>
+  <% end %>
+
   <% if @answers %>
     <div id="answers">
       <% @answers.each do |answer| %>
@@ -28,10 +40,8 @@
   <%end%>
 
   <p>answer question<p>
-  <% if current_user %>
     <%= form_for @answer, :url => question_answers_path(@question) do |f| %>
       <%= f.text_area :body, placeholder: "Your Answer"%>
       <%= f.submit value="Submit"%>
     <% end %>
-  <% end %>
 </div>
