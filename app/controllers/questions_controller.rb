@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  
+
   def create
     question = current_user.questions.build(params[:question])
     if question.save
@@ -19,6 +19,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @answer = Answer.new
     @answers = @question.answers
+    @tags = @question.tags
     @comment = Comment.new
     @vote = Vote.new
   end

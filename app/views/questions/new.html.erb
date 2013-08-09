@@ -3,6 +3,7 @@
 <%= form_for(@question) do |f| %>
   Title: <%= f.text_field :title %>
   Body: <%= f.text_field :body %>
+  Tags: <%= f.text_field :tag_list %>
   <%= f.submit "Ask Away!" %>
 <% end %>
 
